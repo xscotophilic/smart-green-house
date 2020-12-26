@@ -1,0 +1,12 @@
+.underline {
+    position: relative;
+    box-shadow: inset 0 -0.4em 0 #ffc857;
+  }
+  .underline::before {
+    top: 0.75em;
+    left: -0.15em;
+  }
+  .underline::after {
+    bottom: 0;
+    right: -0.15em;
+  }

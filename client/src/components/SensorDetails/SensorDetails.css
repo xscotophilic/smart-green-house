@@ -1,0 +1,24 @@
+.whitebox {
+  padding: 10px;
+  color: #2b2d42;
+}
+
+.carddetails {
+  margin-top: 20px;
+  font-family: archivo;
+  font-size: 30px;
+}
+
+.whiteall {
+  padding: 14px;
+  background-color: #ffffff;
+}
+
+.paddingbw {
+  margin: 14px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
