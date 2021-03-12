@@ -3,10 +3,14 @@ import { Router, Route } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Landing from "./Landing";
-import Temptest from "./TempTest";
+import Choosetempormoi from "./Choosetempormoi";
 import AllMySensors from "./AllMySensors";
+import MoistureSensors from "./MoistureSensors";
 import SensorDetails from "./SensorDetails";
+import MoistureSensorDetails from "./MoistureSensorDetails";
 import UserSpecificData from "./UserSpecificData";
+import ChangeRange from "./ChangeRange";
+import ChangeMoistureRange from "./ChangeMoistureRange";
 
 import history from "../history";
 
@@ -19,10 +23,19 @@ class App extends Component {
             <Navbar />
             <div>
               <Route exact path="/" component={Landing} />
-              <Route exact path='/temptest' component={Temptest} />
               <Route exact path="/myfarming" component={UserSpecificData} />
+              
+              <Route exact path="/choosetempormoi" component={Choosetempormoi} />
+
               <Route exact path="/sensors" component={AllMySensors} />
-              <Route exact path='/details/:id' component={SensorDetails} />
+              <Route exact path="/moisturesensors" component={MoistureSensors} />
+                        
+              <Route exact path="/changerange/:id" component={ChangeRange} />
+              <Route exact path="/changemoisturerange/:id" component={ChangeMoistureRange} />
+            
+              <Route exact path="/moisturedetails/:id" component={MoistureSensorDetails} />
+              <Route exact path="/details/:id" component={SensorDetails} />
+            
             </div>
           </div>
         </Router>

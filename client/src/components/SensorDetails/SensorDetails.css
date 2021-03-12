@@ -6,7 +6,7 @@
 .carddetails {
   margin-top: 20px;
   font-family: archivo;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .whiteall {
@@ -21,4 +21,90 @@
 .flex-center {
   display: flex;
   justify-content: center;
+}
+
+.rotate {
+  animation: rotation 1s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.bulb_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lightbulb__container {
+  height: 200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.lightbulb__container .lightbulb__bulb {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  background: #ffd500;
+  border-radius: 50%;
+}
+.lightbulb__container .lightbulb__bulb_inside {
+  border-right: 1.15rem solid #ffd500;
+  border-radius: 50%;
+  transform: rotateZ(-20deg);
+}
+
+.lightbulb__container .lightbulb__base {
+  z-index: 10;
+  position: absolute;
+  bottom: 1.75rem;
+  width: 7.25rem;
+  height: 2.5rem;
+  background: #888f98;
+  border-radius: 0.5rem;
+}
+
+.lightbulb__container .lightbulb__spiral {
+  width: 5rem;
+  height: 1.5rem;
+  background: #7a828c;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(180deg, transparent 45%, #565c64 10%);
+  background-size: 50% 30%;
+}
+
+@keyframes glow {
+  0% {
+    transform: translateX(-50%) translateY(-15%) scale(0.5);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-15%) scale(1.00);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-15%) scale(0.5);
+  }
+}
+
+.lightbulb__container .lightbulb__glow {
+  z-index: 8;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-15%) scale(0.5);
+  filter: blur(5rem);
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: radial-gradient(#ff9f1c 25%, transparent 100%);
+  animation: glow 5s ease infinite;
 }

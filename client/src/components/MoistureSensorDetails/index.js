@@ -13,31 +13,31 @@ import {
 } from "recharts";
 
 import {
-  fetchtempbysensorid,
-  alltempbysensorid,
-  getcontrollerdata,
+  fetchmoistbysensorid,
+  allmoistbysensorid,
+  getmoisturecontrollerdata,
 } from "../../actions";
 
-import "./SensorDetails.css";
+import "./MoistureSensorDetails.css";
 
 class Sensors extends Component {
   async componentDidMount() {
-    await this.props.getcontrollerdata(
+    await this.props.getmoisturecontrollerdata(
       this.props.match.params.id,
       this.props.user.user_id
     );
-    await this.props.fetchtempbysensorid(
+    await this.props.fetchmoistbysensorid(
       this.props.match.params.id,
       this.props.user.user_id
     );
-    await this.props.alltempbysensorid(
+    await this.props.allmoistbysensorid(
       this.props.match.params.id,
       this.props.user.user_id
     );
   }
 
   graphhelper() {
-    const data = this.props.alltempbysensor.slice(0, 15).reverse();
+    const data = this.props.allmoistbysensor.slice(0, 15).reverse();
     return (
       <div className="hide-on-med-and-down flex-center chartcenter">
         <LineChart
@@ -56,58 +56,35 @@ class Sensors extends Component {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="temp" stroke="#8884d8" />
+          <Line type="monotone" dataKey="moisture" stroke="#8884d8" />
         </LineChart>
       </div>
     );
   }
 
-  lightbulb() {
-    if (this.props.gcontrollerdata[0].light_status) {
-      return (
-        <div className="bulb_main">
-          <div className="lightbulb__container">
-            <div className="lightbulb__bulb">
-              <div className="lightbulb__bulb_inside"></div>
-              <div className="lightbulb__bulb_bottom"></div>
-            </div>
-            <div className="lightbulb__base"></div>
-            <div className="lightbulb__glow"></div>
-            <div className="lightbulb__spiral"></div>
-          </div>
-          <h6>Light Status: On</h6>
-        </div>
-      );
-    } else {
-      return (
-        <div className="bulb_main">
-          <div className="lightbulb__container">
-            <div className="lightbulb__bulb">
-              <div className="lightbulb__bulb_inside"></div>
-              <div className="lightbulb__bulb_bottom"></div>
-            </div>
-            <div className="lightbulb__base"></div>
-            <div className="lightbulb__spiral"></div>
-          </div>
-          <h6>Light Status: Off</h6>
-        </div>
-      );
-    }
-  }
-
-  fan() {
-    if (this.props.gcontrollerdata[0].fan_status) {
+  watermotor() {
+    if (this.props.moistcontrollerdata[0].motor_status) {
       return (
         <div>
-          <img className="rotate" src="/fan.png" alt="fan"></img>
-          <h6>Fan Status: On</h6>
+          <div className="col s12 m12 wrapforwavesouter">
+            <div className="wrapforwaves">
+              <div className="wave"></div>
+              <div className="wave1"></div>
+              <div className="wave2"></div>
+            </div>
+          </div>
+          <h6>Watermotor Status: On</h6>
         </div>
       );
     } else {
       return (
         <div>
-          <img src="/fan.png" alt="fan"></img>
-          <h6>Fan Status: Off</h6>
+          <div className="col s12 m12 wrapforwavesouter">
+            <div className="wrapforwaves">
+              <div className="wave0"></div>
+            </div>
+          </div>
+          <h6>Watermotor Status: Off</h6>
         </div>
       );
     }
@@ -119,11 +96,11 @@ class Sensors extends Component {
         <h5 style={{ padding: "25px 0px", margin: "0px" }}>Recorded data</h5>
         {this.graphhelper()}
         <hr />
-        {this.props.alltempbysensor.map((value, index) => {
+        {this.props.allmoistbysensor.map((value, index) => {
           return (
             <div key={index} className="col paddingbw s12 m12">
               <div style={{ textAlign: "center" }}>
-                <div className="col s6 m6">temp: {value.temp}</div>
+                <div className="col s6 m6">moisture: {value.moisture}</div>
                 <div className="col s6 m6">
                   <Moment format="DD MMM YYYY">{value.entrytime}</Moment>,{" "}
                   <Moment format="hh:mm:ss">{value.entrytime}</Moment>
@@ -141,9 +118,9 @@ class Sensors extends Component {
       return <h3>Login Error!</h3>;
     } else if (
       this.props.user.user_id != null &&
-      this.props.recenttempbysensors[0] != null &&
-      this.props.alltempbysensorid != null &&
-      this.props.gcontrollerdata.length > 0
+      this.props.recentmoistbysensors[0] != null &&
+      this.props.allmoistbysensor != null &&
+      this.props.moistcontrollerdata.length > 0
     ) {
       return (
         <div className="mainouter" style={{ padding: "25px" }}>
@@ -153,17 +130,17 @@ class Sensors extends Component {
             </div>
             <div className="col s12 m6 ">
               <div className="carddetails" style={{ textAlign: "left" }}>
-                Last recorded temperature for sensor{" "}
-                {this.props.recenttempbysensors[0].sensor_id} is{" "}
-                {this.props.recenttempbysensors[0].temp}F.
+                Last recorded Moisture for sensor{" "}
+                {this.props.recentmoistbysensors[0].sensor_id} is{" "}
+                {this.props.recentmoistbysensors[0].moisture}.
                 <br />
                 It was recorded on{" "}
                 <Moment format="DD MMM YYYY">
-                  {this.props.recenttempbysensors[0].entrytime}
+                  {this.props.recentmoistbysensors[0].entrytime}
                 </Moment>
                 ,{" "}
                 <Moment format="hh:mm:ss">
-                  {this.props.recenttempbysensors[0].entrytime}
+                  {this.props.recentmoistbysensors[0].entrytime}
                 </Moment>
                 .
               </div>
@@ -172,23 +149,22 @@ class Sensors extends Component {
           <div className="row white whitebox">
             <div className="col s12 m12 ">
               <div className="carddetails" style={{ textAlign: "left" }}>
-                Lower bound of temp:{" "}
-                {this.props.gcontrollerdata[0].lowerbound_temp}
+                Lower bound of moisture:{" "}
+                {this.props.moistcontrollerdata[0].lowerbound_moi}
                 <br />
-                Upper bound of temp:{" "}
-                {this.props.gcontrollerdata[0].upperbound_temp}
+                Upper bound of moisture:{" "}
+                {this.props.moistcontrollerdata[0].upperbound_moi}
                 <br />
                 <Link
                   style={{ margin: "12px auto" }}
                   className="btn"
-                  to={`/changerange/${this.props.match.params.id}`}
+                  to={`/changemoisturerange/${this.props.match.params.id}`}
                 >
                   Change The Range
                 </Link>
                 <hr style={{ margin: "10px auto" }} />
               </div>
-              <div className="col s12 m6">{this.fan()}</div>
-              <div className="col s12 m6">{this.lightbulb()}</div>
+              {this.watermotor()}
             </div>
           </div>
           <div>{this.mapalltemp()}</div>
@@ -232,15 +208,15 @@ class Sensors extends Component {
 
 function mapStateToProps({
   user,
-  recenttempbysensors,
-  alltempbysensor,
-  gcontrollerdata,
+  recentmoistbysensors,
+  allmoistbysensor,
+  moistcontrollerdata,
 }) {
-  return { user, recenttempbysensors, alltempbysensor, gcontrollerdata };
+  return { user, recentmoistbysensors, allmoistbysensor, moistcontrollerdata };
 }
 
 export default connect(mapStateToProps, {
-  fetchtempbysensorid,
-  alltempbysensorid,
-  getcontrollerdata,
+  fetchmoistbysensorid,
+  allmoistbysensorid,
+  getmoisturecontrollerdata,
 })(Sensors);

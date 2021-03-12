@@ -1,0 +1,33 @@
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.fill {
+  --color: #4c956c;
+  --hover: #ffc857;
+}
+
+.fillfontcolor{
+  color: #4c956c;
+}
+
+button {
+  color: #4c956c;
+  transition: 0.25s;
+}
+
+button:hover, button:focus, .fillfontcolor:hover, .fillfontcolor:focus {
+  border-color: #ffc857;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}

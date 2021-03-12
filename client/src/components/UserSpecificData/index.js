@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { reduxForm, Field } from "redux-form";
+import { connect } from "react-redux";
 
-import { verifyuser } from '../../actions/index';
+import { verifyuser } from "../../actions/index";
 
-import './UserSpecificData.css';
+import "./UserSpecificData.css";
 
 class UserSpecificData extends Component {
   render() {
     return (
       <div className="form">
-
         <div className="form-toggle"></div>
 
         <div className="form-panel one">
@@ -18,10 +17,29 @@ class UserSpecificData extends Component {
             <h1>Account Login</h1>
           </div>
           <div className="form-content">
-            <form autoComplete='off' onSubmit={this.props.handleSubmit((e) => this.props.verifyuser(e))}>
+            <form
+              autoComplete="off"
+              onSubmit={this.props.handleSubmit((e) =>
+                this.props.verifyuser(e)
+              )}
+            >
               <div className="form-group">
                 <label htmlFor="username">User id</label>
-                <Field component='input' type="password" name="userid" required />
+                <Field
+                  component="input"
+                  type="string"
+                  name="userid"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="userpassword">User password</label>
+                <Field
+                  component="input"
+                  type="password"
+                  name="userpass"
+                  required
+                />
               </div>
               <div className="form-group">
                 <button type="submit">Log In</button>
@@ -39,5 +57,5 @@ const wrappedUserForm = connect(null, {
 })(UserSpecificData);
 
 export default reduxForm({
-  form: 'userform',
+  form: "userform",
 })(wrappedUserForm);
