@@ -5,6 +5,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user_token: {
+    type: String,
+    required: true,
+  },
   user_pass: {
     type: String,
     required: true,

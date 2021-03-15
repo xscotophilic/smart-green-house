@@ -27,7 +27,7 @@ export const fetchtemp = () => async (dispatch) => {
 
 export const verifyuser = ({ userid, userpass }) => async (dispatch) => {
   const res = await axios.post(`/user/userverification`, {
-    user_id: userid,
+    user_token: userid,
     user_pass: userpass
   });
   dispatch({ type: VERIFY_USER, payload: { user_id: res.data } });

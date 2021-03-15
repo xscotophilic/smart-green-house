@@ -5,11 +5,11 @@ const User = require("../models/User");
 
 router.post("/userverification", async (req, res) => {
   try {
-    const { user_id, user_pass } = req.body;
-    const user = await User.findOne({ user_id });
+    const { user_token, user_pass } = req.body;
+    const user = await User.findOne({ user_token });
     if (user) {
-      if (user.user_id === user_id && user.user_pass === user_pass) {
-        return res.json(user_id);
+      if (user.user_token === user_token && user.user_pass === user_pass) {
+        return res.json(user.user_id);
       }
       return res.status(401).send("Authentication Error.");
     }
