@@ -63,7 +63,7 @@ class Sensors extends Component {
   }
 
   lightbulb() {
-    if (this.props.gcontrollerdata[0].light_status) {
+    if (this.props.gcontrollerdata.light_status) {
       return (
         <div className="bulb_main">
           <div className="lightbulb__container">
@@ -96,7 +96,7 @@ class Sensors extends Component {
   }
 
   fan() {
-    if (this.props.gcontrollerdata[0].fan_status) {
+    if (this.props.gcontrollerdata.fan_status) {
       return (
         <div>
           <img className="rotate" src="/fan.png" alt="fan"></img>
@@ -173,10 +173,10 @@ class Sensors extends Component {
             <div className="col s12 m12 ">
               <div className="carddetails" style={{ textAlign: "left" }}>
                 Lower bound of temp:{" "}
-                {this.props.gcontrollerdata[0].lowerbound_temp}
+                {this.props.gcontrollerdata.lowerbound_temp}
                 <br />
                 Upper bound of temp:{" "}
-                {this.props.gcontrollerdata[0].upperbound_temp}
+                {this.props.gcontrollerdata.upperbound_temp}
                 <br />
                 <Link
                   style={{ margin: "12px auto" }}

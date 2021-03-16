@@ -63,7 +63,7 @@ class Sensors extends Component {
   }
 
   watermotor() {
-    if (this.props.moistcontrollerdata[0].motor_status) {
+    if (this.props.moistcontrollerdata.motor_status) {
       return (
         <div>
           <div className="col s12 m12 wrapforwavesouter">
@@ -150,10 +150,10 @@ class Sensors extends Component {
             <div className="col s12 m12 ">
               <div className="carddetails" style={{ textAlign: "left" }}>
                 Lower bound of moisture:{" "}
-                {this.props.moistcontrollerdata[0].lowerbound_moi}
+                {this.props.moistcontrollerdata.lowerbound_moi}
                 <br />
                 Upper bound of moisture:{" "}
-                {this.props.moistcontrollerdata[0].upperbound_moi}
+                {this.props.moistcontrollerdata.upperbound_moi}
                 <br />
                 <Link
                   style={{ margin: "12px auto" }}

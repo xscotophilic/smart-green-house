@@ -27,7 +27,7 @@ class ChangeMoistureRange extends Component {
             <form
               autoComplete="off"
               onSubmit={this.props.handleSubmit((e) =>
-                this.props.setmoisturecontrollerdata(e, this.props.moistcontrollerdata[0].user_id, this.props.moistcontrollerdata[0].sensor_id, this.props.moistcontrollerdata[0].motor_status)
+                this.props.setmoisturecontrollerdata(e, this.props.moistcontrollerdata.user_id, this.props.moistcontrollerdata.sensor_id, this.props.moistcontrollerdata.motor_status)
               )}
             >
               <div className="form-group">
