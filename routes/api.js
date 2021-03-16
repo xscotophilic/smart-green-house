@@ -143,7 +143,7 @@ router.post("/getcontrollerstatus/:id", async (req, res) => {
     if (!controllerdata) {
       return res.status(400).json({ msg: "There are no data for this user." });
     }
-    return res.json(controllerdata);
+    return res.json(controllerdata[0]);
   } catch (error) {
     console.error(error.message);
     return res.status(500).send("Server Error.");
@@ -347,7 +347,7 @@ router.post("/getcontrollerstatusmoi/:id", async (req, res) => {
     if (moicontroller.length === 0) {
       return res.status(400).json({ msg: "There is no data for this user." });
     }
-    return res.json(moicontroller);
+    return res.json(moicontroller[0]);
   } catch (error) {
     console.error(error.message);
     return res.status(500).send("Server Error.");
