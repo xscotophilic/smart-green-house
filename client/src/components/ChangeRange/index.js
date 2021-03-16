@@ -27,7 +27,7 @@ class ChangeRange extends Component {
             <form
               autoComplete="off"
               onSubmit={this.props.handleSubmit((e) =>
-                this.props.setcontrollerdata(e, this.props.gcontrollerdata.user_id, this.props.gcontrollerdata.sensor_id, this.props.gcontrollerdata.fan_status, this.props.gcontrollerdata.light_status)
+                this.props.setcontrollerdata(e, this.props.gcontrollerdata[0].user_id, this.props.gcontrollerdata[0].sensor_id, this.props.gcontrollerdata[0].fan_status, this.props.gcontrollerdata[0].light_status)
               )}
             >
               <div className="form-group">
