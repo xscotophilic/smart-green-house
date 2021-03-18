@@ -19,7 +19,7 @@ class ChangeMoistureRange extends Component {
 
   render() {
     return (
-      <div className="outerwrap">
+      <div className="outerwrap" style={{paddingBottom: '80px'}}>
         <div className="form">
           <div className="form-toggle"></div>
 
@@ -67,9 +67,11 @@ class ChangeMoistureRange extends Component {
               </form>
             </div>
           </div>
-        </div>
-        <div style={{ marginTop: "20px" }}>
-          <img src="/conversion.png" alt="conversion"></img>
+          <img
+            src="/conversion.png"
+            alt="conversion"
+            style={{ width: "100%" }}
+          />
         </div>
       </div>
     );

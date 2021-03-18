@@ -35,7 +35,7 @@ class Header extends Component {
           </Link>
           <input id="nav" type="checkbox" />
           <label htmlFor="nav"></label>
-          <nav style={{ backgroundColor: "#ff9f1c" }}>
+          <nav style={{ backgroundColor: "transparent" }}>
             <ul>{this.renderContent()}</ul>
           </nav>
         </div>

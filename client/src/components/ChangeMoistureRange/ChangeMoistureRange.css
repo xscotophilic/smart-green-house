@@ -1,3 +1,7 @@
+.outerwrap{
+  background: #edf2fb;
+}
+
 .overlay,
 .form-panel.one:before {
   position: absolute;
@@ -236,4 +240,11 @@
 
 .hiddfield{
   display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .form{
+    margin: 0px;
+    width: 100%;
+  }
 }

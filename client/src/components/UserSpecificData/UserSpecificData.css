@@ -229,3 +229,10 @@
     background: #FFFFFF !important;
     color: #ffc857 !important;
   }
+
+  @media only screen and (max-width: 700px) {
+    .form{
+      margin: 0px;
+      width: 100%;
+    }
+  }
