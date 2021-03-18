@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "http-proxy-middleware": "^1.0.6",
     "moment": "^2.29.1",
     "react": "^17.0.1",
