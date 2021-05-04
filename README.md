@@ -1,4 +1,5 @@
 # Smart Green House
+
 > Front-end and Back-end for a system to maintain a specific moisture level and temperature range for optimal plant growth!
 
 - Easy and simple to use.
@@ -10,9 +11,8 @@
   - Update the configs (in config folder).
   - Host this github repo.
   - Authenticate the user in mongoDB.
-  - Change the REST API url in python code.
-  - Run the Python code.
-
+  - Change the REST API url (self.API_ENDPOINT) in python code (SmartGreenhouse.py).
+  - Run the Python code (SmartGreenhouse.py).
 
 ---
 
