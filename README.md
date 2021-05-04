@@ -1,5 +1,17 @@
 # Smart Green House
-> IoT project!
+> Front-end and Back-end for a system to maintain a specific moisture level and temperature range for optimal plant growth!
+
+- Easy and simple to use.
+- Steps to folllow:
+  - Connect the circuit.
+  - ![Circuit diagram](https://user-images.githubusercontent.com/47301282/117006745-6e7c9700-ad06-11eb-8775-879133c45fe1.png)
+  - Create mongoDB cluster.
+  - Update the configs (in config folder).
+  - Host this github repo.
+  - Authenticate the user in mongoDB.
+  - Change the REST API url in python code.
+  - Run the Python code.
+
 
 ---
 
