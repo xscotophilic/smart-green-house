@@ -11,7 +11,8 @@
   - ![GreenSketch](https://user-images.githubusercontent.com/47301282/117006976-b1d70580-ad06-11eb-951b-cd6e2e09a551.jpg)
   - ![Circuit diagram](https://user-images.githubusercontent.com/47301282/117006745-6e7c9700-ad06-11eb-8775-879133c45fe1.png)
   - Create mongoDB cluster.
-  - Update the configs (in config folder).
+  - Navigate to the `server` directory.
+  - Update the configs (in `server/config` folder).
   - Host this github repo.
   - Authenticate the user in mongoDB.
   - Change the REST API url (self.API_ENDPOINT) in python code (SmartGreenhouse.py).
@@ -24,7 +25,6 @@
 - [Demo](https://drive.google.com/file/d/1rMo6D-h9Ft62zdCEbj6c4VViC1PdJesM/view?usp=sharing)
 
 ---
-
 
 ### If you like my work, you can contribute to https://www.patreon.com/xscotophilic
 
